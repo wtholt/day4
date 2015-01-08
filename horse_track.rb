@@ -35,12 +35,11 @@ answer = gets.chomp
 if answer == "start"
 
 	puts "These are the four horses that will be racing today. You can inspect their respective names and speeds."
-	p horse_inventory
 	puts "Which horse would you like to bet on?"
-	puts "Horse 1 is #{Horse.horses.inspect[0]}."
-	puts "Horse 2 is #{Horse.horses.inspect[1]}."
-	puts "Horse 3 is #{Horse.horses.inspect[2]}."
-	puts "Horse 4 is #{Horse.horses.inspect[3]"
+	puts "Horse 1 is [ #{horse1.inspect}."
+	puts "Horse 2 is # #{horse2.inspect}."
+	puts "Horse 3 is < #{horse3.inspect}."
+	puts "Horse 4 is H #{horse4.inspect}"
 	
 	bet = gets.chomp
 	if bet == "horse 1"
@@ -53,35 +52,63 @@ if answer == "start"
 		puts "The great Seabiscuit"
 	else
 		puts "I didn't catch that."
+		
 	end
 		
 end
 
 puts "Type race to begin the race!"
 race = gets.chomp
+
+
 if race == "race"
 	@racing = true
+elsif race == "cheat"
+	@racing_1 = false
+	puts "All the Horses are dead!"
+elsif race == "phar lap"
+	@racing_2 = true
+	
 end
 
 
 def horse_track horse1, horse2, horse3, horse4
-	puts "#{@horse1}"
-	puts "-------------------------------------------------------------------------------"
-	puts "#{@horse2}"
-	puts "-------------------------------------------------------------------------------"
-	puts "#{@horse3}"
-	puts "-------------------------------------------------------------------------------"
-	puts "#{@horse4}"
-	puts "-------------------------------------------------------------------------------"
-	while @racing 
-		@horse1
-		@horse2
-		@horse3
-		@horse4
+	while @racing
+		horse_race1 = 1 ** 2 + 10
+		horse_race2 = 2 ** 2 + 5
+		horse_race3 = 3 ** 2 + 3
+		horse_race4 = 4 ** 2 + 20
+		if horse_race4 <= 250
+			@racing = false
+			puts "Seabiscuit wins!"
+		end
+	while @racing_2
+		horse_race1 = 4 ** 2 + 20
+		horse_race2 = 2 ** 2 + 5
+		horse_race3 = 3 ** 2 + 3
+		horse_race4 = 1 ** 2 + 3
+		if horse_race1 <= 250
+			@racing = false
+			puts "Phar Lap wins!"
+		end
+
+
+
+
+		puts "#{@horse1.rjust(horse_race1)}"
+		puts "-------------------------------------------------------------------------------"
+		puts "#{@horse2.rjust(horse_race2)}"
+		puts "-------------------------------------------------------------------------------"
+		puts "#{@horse3.rjust(horse_race3)}"
+		puts "-------------------------------------------------------------------------------"
+		puts "#{@horse4.rjust(horse_race4)}"
+		puts "-------------------------------------------------------------------------------"
+		end
 	end
-		
+
 end
 
+horse_track horse1, horse2, horse3, horse4
 
 
 
@@ -94,6 +121,12 @@ end
 
 
 
-horse_track @horse1, @horse2, @horse3, @horse4
+
+
+
+
+
+
+
 
 
