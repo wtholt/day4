@@ -64,10 +64,8 @@ race = gets.chomp
 if race == "race"
 	@racing = true
 elsif race == "cheat"
-	@racing_1 = false
-	puts "All the Horses are dead!"
-elsif race == "phar lap"
-	@racing_2 = true
+	@racing = false
+	puts "Seabiscuit was caught with steroids. Race cancelled!"
 	
 end
 
@@ -82,15 +80,7 @@ def horse_track horse1, horse2, horse3, horse4
 			@racing = false
 			puts "Seabiscuit wins!"
 		end
-	while @racing_2
-		horse_race1 = 4 ** 2 + 20
-		horse_race2 = 2 ** 2 + 5
-		horse_race3 = 3 ** 2 + 3
-		horse_race4 = 1 ** 2 + 3
-		if horse_race1 <= 250
-			@racing = false
-			puts "Phar Lap wins!"
-		end
+	
 
 
 
@@ -103,7 +93,7 @@ def horse_track horse1, horse2, horse3, horse4
 		puts "-------------------------------------------------------------------------------"
 		puts "#{@horse4.rjust(horse_race4)}"
 		puts "-------------------------------------------------------------------------------"
-		end
+		
 	end
 
 end
