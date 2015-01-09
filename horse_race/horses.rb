@@ -51,7 +51,7 @@ class Track
 	@@lanes = []
 
 	def initialize
-		self.lane = "------------------------------------------------"
+		self.lane = "-"
 		Track.lanes.push(self)
 	end
 
@@ -68,22 +68,35 @@ class Track
 end
 
 lane1 = Track.new
-lane1.lane = "-----------------------------------"
+lane1.lane = "-" * 79
 lane2 = Track.new
-lane2.lane = "-----------------------------------"
+lane2.lane = "-" * 79
 lane3 = Track.new
-lane3.lane = "-----------------------------------"
+lane3.lane = "-" * 79
 lane4 = Track.new
-lane4.lane = "-----------------------------------"
+lane4.lane = "-" * 79
 
 
 
-puts "Welcome to the Charleston Horse Race!"
-puts "Which horse would you like to back today?"
+
+
 puts horse1.display_information
 puts horse2.display_information
 puts horse3.display_information
 puts horse4.display_information
+
+puts horse1.display_icon
+puts lane1.display_information
+puts horse2.display_icon
+puts lane2.display_information
+puts horse3.display_icon
+puts lane3.display_information
+puts horse4.display_icon
+puts lane4.display_information
+
+
+puts "Welcome to the Charleston Horse Race!"
+puts "Which horse would you like to back today?"
 choice = gets.chomp
 if choice == "phar lap"
 	race = true
@@ -114,18 +127,18 @@ while race
 	race = false
 end	
 
-puts "Would you like to help Phar Lap win by giving him steroids?"
+puts "Would you like to cheat and rerun the race? Type yes: "
 change = gets.chomp
 if change == "yes"
 	puts "Type cheat"
 	cheat = gets.chomp
 
-	if cheat == "cheat"
+	if cheat == "phar lap"
 		race = true
-		horse1_move = rand(25..30) + 5
-		horse2_move = rand(5..10) + 5
-		horse3_move = rand(5..10) + 5
-		horse4_move = rand(5..10) +5
+		horse1_move = rand(45..50) + 1
+		horse2_move = rand(5..10) + 1
+		horse3_move = rand(5..10) + 1
+		horse4_move = rand(30..35) + 2
 
 		while race
 			puts horse1.display_icon.rjust(horse1_move, '-')
@@ -138,9 +151,51 @@ if change == "yes"
 			puts lane4.display_information
 			puts "Phar Lap won!"
 			race = false
-	
 		end
+	
+	elsif cheat == "war admiral"
+		race = true
+		horse1_move = rand(5..10) + 1
+		horse2_move = rand(45..50) + 1
+		horse3_move = rand(5..10) + 1
+		horse4_move = rand(30..35) + 2
+
+		while race
+			puts horse1.display_icon.rjust(horse1_move, '-')
+			puts lane1.display_information
+			puts horse2.display_icon.rjust(horse2_move, '-')
+			puts lane2.display_information
+			puts horse3.display_icon.rjust(horse3_move, '-')
+			puts lane3.display_information
+			puts horse4.display_icon.rjust(horse4_move, '-')
+			puts lane4.display_information
+			puts "War Admiral won!"
+			race = false
+		end
+
+	elsif cheat == "smarty jones"
+		race = true
+		horse1_move = rand(5..10) + 1
+		horse2_move = rand(5..10) + 1
+		horse3_move = rand(45..50) + 1
+		horse4_move = rand(30..35) + 2
+
+		while race
+			puts horse1.display_icon.rjust(horse1_move, '-')
+			puts lane1.display_information
+			puts horse2.display_icon.rjust(horse2_move, '-')
+			puts lane2.display_information
+			puts horse3.display_icon.rjust(horse3_move, '-')
+			puts lane3.display_information
+			puts horse4.display_icon.rjust(horse4_move, '-')
+			puts lane4.display_information
+			puts "Smarty Jones won!"
+			race = false
+		end
+
+
 	end
+
 end
 
 
