@@ -119,7 +119,7 @@ while race
 	race = false
 end	
 
-puts "Would you like to alter the race?"
+puts "Would you like to help Phar Lap win by giving him steroids?"
 change = gets.chomp
 if change == "yes"
 	puts "Type cheat"
