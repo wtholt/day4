@@ -98,7 +98,7 @@ end
 horse1_move = rand(10..15) + 1
 horse2_move = rand(10..15) + 1
 horse3_move = rand(10..20) + 1
-horse4_move = rand(15..25) + 2
+horse4_move = rand(30..35) + 2
 
 
 while race
