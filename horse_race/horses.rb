@@ -19,14 +19,9 @@ class Horse
 		"#{self.icon}"
 	end
 
-	def self.display_all_horses
-	end
-
 	def self.list_of_horses
 		@@list_of_horses
 	end
-
-
 
 end
 
