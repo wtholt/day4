@@ -11,7 +11,7 @@ class Horse
 	end
 
 	def full_name
-		self.name + " " + self.icon
+		self.name + " "
 	end
 
 	def move_forward
@@ -85,6 +85,7 @@ if racing == 'r'
 		puts track.horses[3].move_forward
 
 		sleep(1)
+		system("clear")
 
 		if horse1.position > 100
 			puts "Phar Lap won!"
@@ -114,6 +115,7 @@ elsif racing == 'steroids'
 		puts track.horses[3].move_slower
 
 		sleep(1)
+		system("clear")
 
 		if horse1.position > 100
 			puts "Phar Lap won!"
