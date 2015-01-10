@@ -25,9 +25,6 @@ class Horse
 	def move_faster
 		self.position = self.position + rand(3..7)
 	end
-
-
-
 end
 
 class Track
