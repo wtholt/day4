@@ -11,6 +11,7 @@ class Horse
 		self.location += rand(1..5)
 	end
 
+
 	def display_track
 		puts "#{self.location} #{self.name}"
 		print '-' * self.location
@@ -20,8 +21,9 @@ end
 
 class Track
 	attr_accessor :horses
+	attr_accessor :length
 
-	def initialize 
+	def initialize
 		self.horses = []
 	end
 	def display_horses
@@ -41,6 +43,12 @@ class Track
 			horse.move_horses
 		end
 	end
+
+	def winner
+		self.length = 79
+	end
+
+
 end
 
 horse1 = Horse.new
@@ -66,4 +74,19 @@ while game_on
 	gets.chomp
 	derby.move_all_horses
 	derby.display_derby
+	derby.winner
+	if horse1.location > 79
+		game_on = false
+		puts "#{horse1.name} won!"
+	elsif horse2.location > 79
+		game_on = false
+		puts "#{horse2.name} won!"
+	elsif horse3.location > 79
+		game_on = false
+		puts "#{horse3.name} won!"
+	elsif horse4.location > 79
+		game_on = false
+		puts "#{horse4.name} won!"
+			
+	end
 end
